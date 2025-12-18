@@ -1,112 +1,201 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  /* background-color: #f0f2f5; */
+  background: linear-gradient(135deg, #1a4ca3 0%, #e6f0fa 100%);
+  color: #333;
+  margin: 0;
+  padding: 16px;
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
 }
 
-.container {
-    text-align: center;
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
+img {
+  max-width: 100%; /* Prevent image from overflowing its container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Removes inline gaps */
 }
 
-h1 {
-    color: #1a73e8;
-    margin-bottom: 20px;
+.container,
+#launched_by {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* width: min(100% - 32px, 550px); 16px gutter on both sides */
+  width: 100%;
+  max-width: 640px; /* Mobile max width */
+  margin-inline: auto;
+}
+
+#launched_by {
+  padding: 10px;
+}
+
+.container > p {
+  color: black;
+  font-weight: bold;
+}
+
+h2 {
+  color: #1a73e8;
+  margin-bottom: 20px;
+  font-size: clamp(1.1rem, 3.5vw, 1.6rem);
 }
 
 input[type="text"] {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.6rem;
+  border: 1px solid;
 }
 
 button {
-    background-color: #1a73e8;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #1558b3;
+  background-color: #1558b3;
 }
 
 #status-list {
-    margin-top: 20px;
-    text-align: left;
+  margin-top: 20px;
+  text-align: left;
 }
 
 .participant {
-    background-color: #e8f0fe;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    animation: fadeIn 0.5s ease-in-out;
+  background-color: #e8f0fe;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  animation: fadeIn 0.5s ease-in-out;
+  text-align: center;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-#animation-container {
-    margin-top: 30px;
-}
+/* #animation-container {
+  margin-top: 30px;
+} */
 
 #launched-image {
-    max-width: 100%;
-    border-radius: 10px;
-    animation: zoomIn 1s forwards;
+  max-width: 100%;
+  border-radius: 10px;
+  animation: zoomIn 1s forwards;
 }
 
 @keyframes zoomIn {
-    from { transform: scale(0); }
-    to { transform: scale(1); }
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
-
 #countdown-timer {
-    font-size: 8rem;
-    font-weight: bold;
-    color: #1a73e8;
-    margin: 20px 0;
-    animation: pulse 1s infinite;
+  font-size: clamp(2rem, 10vw, 6rem);
+  font-weight: bold;
+  color: #1a73e8;
+  margin: 20px 0;
+  animation: pulse 1s infinite;
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 #confetti-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* ==== Breakpoints ==== */
+
+/* ≥600px: Slightly wider containers, better spacing */
+@media (min-width: 600px) {
+  .container,
+  #launched_by {
+    max-width: 760px;
+  }
+
+  input[type="text"] {
+    font-size: 0.8rem;
+  }
+
+  body {
+    padding: 24px;
+  }
+
+  /* Tighter button alignment on larger screens */
+  button {
+    padding: 12px 20px;
+  }
+}
+
+/* ≥900px: Desktop breathing room */
+@media (min-width: 900px) {
+  .container,
+  #launched_by {
+    max-width: 900px;
+  }
+
+  input[type="text"] {
+    font-size: 1rem;
+  }
+
+  body {
+    padding: 32px;
+  }
+
+  /* If you later add multiple blocks inside .container, they’ll stack on mobile and can be widened here */
 }
