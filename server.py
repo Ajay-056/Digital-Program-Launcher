@@ -6,8 +6,8 @@ import threading
 import time
 
 PORT = 3456
-TARGET_LAUNCHES = 2  # Customizable number of launches
-COUNTDOWN_SECONDS = 3  # Customizable countdown duration
+TARGET_LAUNCHES = 7  # Customizable number of launches
+COUNTDOWN_SECONDS = 10  # Customizable countdown duration
 
 # Shared state
 launched_participants = []

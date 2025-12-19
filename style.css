@@ -24,7 +24,6 @@ body {
 img {
   max-width: 100%; /* Prevent image from overflowing its container */
   height: auto; /* Maintain aspect ratio */
-  display: block; /* Removes inline gaps */
 }
 
 .container,
@@ -88,6 +87,7 @@ button:hover {
 .participant {
   background-color: #e8f0fe;
   font-weight: bold;
+  color: #3c6e91;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;

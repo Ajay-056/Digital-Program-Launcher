@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const infoMessage = document.createElement("p");
         infoMessage.innerHTML =
-          'Check out the <a href="/status">status page</a> to see the progress!';
+          'Check out the <a href="/status">status page</a> to see the live progress!';
         container.appendChild(infoMessage);
       } else {
         throw new Error("Launch failed. Please try again.");

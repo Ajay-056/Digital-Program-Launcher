@@ -35,20 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const containerRect = mainContainer.getBoundingClientRect();
-
     class ConfettiParticle {
       constructor() {
-        // Decide if it's a left or right particle
-        if (Math.random() > 0.5) {
-          // Left side
-          this.x = Math.random() * containerRect.left;
-        } else {
-          // Right side
-          this.x =
-            containerRect.right +
-            Math.random() * (canvas.width - containerRect.right);
-        }
+        this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height - canvas.height;
         this.size = Math.random() * 10 + 5;
         this.vx = Math.random() * 2 - 1;
@@ -63,14 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         this.rotation += this.rotationSpeed;
         if (this.y > canvas.height) {
           this.y = -this.size;
-          // Reset x position based on the original logic
-          if (Math.random() > 0.5) {
-            this.x = Math.random() * containerRect.left;
-          } else {
-            this.x =
-              containerRect.right +
-              Math.random() * (canvas.width - containerRect.right);
-          }
+          this.x = Math.random() * canvas.width;
         }
       }
       draw() {
